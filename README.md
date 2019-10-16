@@ -5,10 +5,9 @@
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-  has_many :groups, through:members
+  has_many :groups
 - has_many :messages
-- has_many :members
-  Has_many :bodies
+
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -19,21 +18,17 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-  belongs_to :member
   belongs_to :group
-  has_many :images
-  has_many :bodies
+  
+## groupsテーブル
 
-## imageテーブル
- :|Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-  belongs_to :body
-  has_many :messages
+ has_many : users
+ 
 
 ## groups_usersテーブル
 
@@ -45,4 +40,5 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+　has_many :users, through: :messages
 
