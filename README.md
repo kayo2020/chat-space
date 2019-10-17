@@ -13,8 +13,8 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|string|null: false|
-|image|string|null: false|
+|body|string|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
