@@ -4,18 +4,16 @@ a{
   color:inherit;
 }
 .flash-box {
-  color: #FFF;
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: lighter;
   text-align: center;
   width: 100vw;
 }
-
 .chat-side {
   width: 300px;
   color:$white;
   float: left;
-  
 }
 .side-header {
   background-color: #253141;
@@ -33,14 +31,12 @@ a{
   }
 }
 }
-
 .groups {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
 }
-
 .group {
   &__group-name {
   font-size: 15px;
@@ -54,8 +50,6 @@ a{
   color: #FFF;
   }
 }
-
-
 .chat-main {
   width: calc(100vw - 300px);
   float: left; 
@@ -97,9 +91,6 @@ a{
       color:#38aef0;
   }
 }
-  
-
-
 .messages{
   height: calc(100vh - 190px);
   padding: 46px 40px;
@@ -108,7 +99,6 @@ a{
   }
 .message {
   padding-bottom: 40px;
-
   &__upper-info {
     display: flex;
     margin-bottom: 10px;
@@ -131,7 +121,6 @@ a{
     text-align: left;
   }
 }
-    
 .form {
   display: flex;
   height: 90px;
@@ -148,7 +137,6 @@ a{
   color: #434a54;
   border-style: none;
   }
-
   &__image {
     font-size: 1.3rem;
     position: absolute;
