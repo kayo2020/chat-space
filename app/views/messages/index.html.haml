@@ -8,7 +8,7 @@
           %li.side-header__box__menu__edit-user
             %i.fa.fa-edit
           %li.side-header__box__menu__new-group
-            %i.fa.fa-cog
+            %i.fa.fa-cogf
     .groups
       .group
         %p.group__group-name test
@@ -24,11 +24,6 @@
         = link_to 'Edit', '#'
     .messages
       = render @messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker test
-          %p.message__upper-info__date 2019/10/25
-        %p.message__text test
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
