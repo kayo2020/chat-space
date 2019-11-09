@@ -6,6 +6,12 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def create
     @message = @group.messages.new(message_params)
     if @message.save
@@ -16,6 +22,11 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+
+  def destroy
+    @message =  @group.messages.find(params[:id])
+    @message.destroy
+  end 
 
   private
 
