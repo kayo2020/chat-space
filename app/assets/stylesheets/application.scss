@@ -1,5 +1,7 @@
-@import "config/variable";
-@import "./reset";
 @import "font-awesome";
-@import "clearfix";
-@import "message";
+@import "config/colors";
+@import "reset";
+@import "messages.scss";
+@import "modules.flash";
+@import "user.scss";
+
