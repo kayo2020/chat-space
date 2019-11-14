@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html
+      format.json { @new_message = @group.messages.includes(:user).where('id > ?', params[:message][:id]) }
     end
   end
 
@@ -27,9 +28,9 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
-      format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
-      format.json 
-     end
+        format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
+        format.json 
+      end
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
