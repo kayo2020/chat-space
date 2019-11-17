@@ -1,21 +1,20 @@
 $(function(){
   function buildHTML(message) {
-    image = ( message.image ) ? `<img class= "lower-message__content" src=${message.image} >` : "";
-
-    var html =`<div class="message" data-id="${ message.id }" data-user_id="${message.user_id}">           
-                <div class="message__upper-info">
-                  <p class="message__upper-info__user-name">
+    var image = ( message.image ) ? `<img class= "lower-message__content" src=${message.image} >` : "";
+    var html =`<div class="messages_message" data-id="${message.id }>           
+                <div class="messages__upper-info">
+                  <p class="messages__upper-info__user-name">
                     ${message.name}
                   </p>
-                  <p class="message__upper-info__date">
+                  <p class="messages__upper-info__date">
                     ${message.created_at}
                   </p>
                 </div>    
-                <div class="message__lower-info__text">
+                <div class="messages__lower-info__text">
                   <p class="lower-message__content"> 
                     ${message.content}
                   </p>
-                  ${image}
+                    ${image}
                 </div>
               </div>`
                   return html;
@@ -54,5 +53,29 @@ $(function(){
       $(".form__submit").removeAttr("disabled");
     });
   });
-
-});
+    var reloadMessages = function () {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    var href = 'api/messages#index {:format=>"json"}'  
+    var last_message_id = $('.message:last').data('message-id');
+    $.ajax({
+      url: href,
+      data: { id: last_message_id },
+      type: "GET",
+      dataType: 'json'
+    })
+      .done(function(message){
+      var insertHTML = '';
+      message.forEach(function(message){
+      insertHTML = buildHTML(message);
+      $('.messages').append(insertHTML);
+      })
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+    })
+      .fail(function(date){
+        alert('自動更新に失敗しました');
+      });
+      } 
+    };
+    setInterval(reloadMessages, 7000);
+  });
+    
