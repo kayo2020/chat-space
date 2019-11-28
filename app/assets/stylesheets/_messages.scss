@@ -26,9 +26,9 @@ a{
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
-      &__menu {
-        display: flex;
-      }
+    &__menu {
+    display: flex;
+    }
   }
   }
   .groups {
@@ -36,13 +36,13 @@ a{
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
-      &__group-name {
+      .group__group-name {
       font-size: 15px;
       padding-bottom: 5px;
       text-align: left;
       color: #FFF;
       }
-      &__latest-message { 
+      .group__latest-message { 
       font-size: 11px;
       text-align: left;
       color: #FFF;

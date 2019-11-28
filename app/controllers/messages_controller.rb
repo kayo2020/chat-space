@@ -13,16 +13,16 @@ class MessagesController < ApplicationController
   def edit
   end
 
-  def update
-    @message = @group.messages.find(params[:id])
-    @message.content = params[:content]
-    if @message.save
-      respond_to do |format|
-        format.html  { redirect_to group_messages_path(@group), notice: 'メッセージが編集されました' }
-        format.json
-      end
-    end
-  end
+  # def update
+  #   @message = @group.messages.find(params[:id])
+  #   @message.content = params[:content]
+  #   if @message.save
+  #     respond_to do |format|
+  #       format.html  { redirect_to group_messages_path(@group), notice: 'メッセージが編集されました' }
+  #       format.json
+  #     end
+  #   end
+  # end
 
   def create
     @message = @group.messages.new(message_params)
@@ -38,10 +38,10 @@ class MessagesController < ApplicationController
     end
   end
 
-  def destroy
-    @message =  @group.messages.find(params[:id])
-    @message.destroy
-  end 
+  # def destroy
+  #   @message =  @group.messages.find(params[:id])
+  #   @message.destroy
+  # end 
 
   private
 
