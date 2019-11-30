@@ -1,23 +1,23 @@
 $(function(){
   function buildHTML(message) {
     var image = ( message.image ) ? `<img class= "lower-message__content" src=${message.image} >` : "";
-    var html =`<div class="messages_message" data-id="${message.id }>           
-                <div class="messages__upper-info">
-                  <p class="messages__upper-info__user-name">
-                    ${message.name}
-                  </p>
-                  <p class="messages__upper-info__date">
-                    ${message.created_at}
-                  </p>
-                </div>    
-                <div class="messages__lower-info__text">
-                  <p class="lower-message__content"> 
-                    ${message.content}
-                  </p>
-                    ${image}
-                </div>
-              </div>`
-                  return html;
+    var html =
+`<div class="messages__message" data-id="${message.id}">
+  <div class="messages__upper-info">
+    <p class="messages__upper-info__user-name">
+      ${message.name}
+    </p>
+    <p class="messages__upper-info__date">${message.created_at}
+    </p>
+  </div>
+  <div class="messages__lower-info__text">
+  </div>
+  <p class="lower-message__content">
+    ${message.content}
+  </p>
+    ${image}
+</div>`
+                return html;
   }
 
   $('#new_message').on('submit', function(e){

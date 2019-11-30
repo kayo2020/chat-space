@@ -21,16 +21,18 @@ a{
     display: flex;
     align-items: center;
     padding: 0 20px;
-    &__box {
+  }  
+    .side-header__box {
     display: flex;
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
-    &__menu {
-    display: flex;
     }
-  }
-  }
+      .side-header__box__menu {
+      display: flex;
+
+      }
+  
   .groups {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
@@ -51,7 +53,7 @@ a{
 .chat-main {
 width: calc(100vw - 300px);
 float: left; 
-} 
+
   .main-header {
   height: 100px;
   padding: 0 40px;
@@ -71,11 +73,11 @@ float: left;
       display: flex;
       font-size: 12px;
       color: #999999;
-      &__list{
-        display: list-item;
-        text-align: -webkit-match-parent;
-        padding-left:5px;
-      }
+        &__list__member{
+          display: list-item;
+          text-align: -webkit-match-parent;
+          padding-left:5px;
+        }
     }
   }
   &__edit-btn {
@@ -89,36 +91,47 @@ float: left;
       color:#38aef0;
   }
   }
+
+// .messages {
+//   .messages__message{
+//     .messages__lower-info {
+// 　　　　今はこのような構造になってます
+//        ＆を使う場合は.messages__message__lower-infoにしないといけません
+//     }
+//   }
+// }
+  
   .messages{
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
-    &__message {
+  .messages__message {
     padding-bottom: 40px;
-    }
-      &__upper-info {
+    .messages__upper-info {
       display: flex;
       margin-bottom: 10px;
-        &__user-name {
-        color: #434a54;
-        font-size: 16px;
-        font-weight: bold;      
-        }
-        &__date {
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
-        padding-top: 5px;
-        }
-        }
-      &__lower-info__text {
-        color: #434a54;
-        font-size: 14px;
-        margin-bottom: 10px;
-        text-align: left;
+      &__user-name {
+      color: #434a54;
+      font-size: 16px;
+      font-weight: bold;      
       }
-    }
+      &__date {
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+      padding-top: 5px;
+      }
+      }
+    .messages__lower-info__text {
+      color: #434a54;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: left;
+      }
+      } 
+  }
+}
   .form {
     background-color: #DDDDDD;
     height: 90px;
@@ -127,11 +140,11 @@ float: left;
       border: none;
       float: left;
       height: 50px;
-      width: calc(100% - 220px);
+      width: calc(100% - 170px);
     }
     &__mask {
       background-color: $white;
-      width: 100px;
+      width: 50px;
       float: left;
       height: 50px;
       padding-right: 10px;
@@ -139,6 +152,7 @@ float: left;
           color: black;
           font-size: 20px;
           line-height: 50px;
+          float: right;
           .hidden {
             display: none;
           }
