@@ -38,18 +38,23 @@ a{
     background-color: #2f3e51;
     padding: 20px 20px 0;
     overflow: scroll;
-      .group__group-name {
-      font-size: 15px;
-      padding-bottom: 5px;
-      text-align: left;
+    .group {  
+      margin-bottom: 40px;
+      box-sizing: border-box;
       color: #FFF;
+    }
+      .group__group-name {
+        font-size: 15px;
+        padding-bottom: 5px;
+        text-align: left;
+        // color: #FFF;
       }
       .group__latest-message { 
-      font-size: 11px;
-      text-align: left;
-      color: #FFF;
+        font-size: 11px;
+        text-align: left;
+        // color: #FFF;
       }
-    }
+  }
 .chat-main {
 width: calc(100vw - 300px);
 float: left; 
